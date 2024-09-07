@@ -1,4 +1,4 @@
-from models.cliente  import Cliente
+from models.cliente import Cliente
 
 class PessoaFisica(Cliente):
     
@@ -7,3 +7,6 @@ class PessoaFisica(Cliente):
         self.nome = nome
         self.data_nascimento = data_nascimento 
         self.cpf = cpf
+
+    def __str__(self):
+        return f"{self.nome}"

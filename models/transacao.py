@@ -1,11 +1,9 @@
-from abc import ABC, abstractmethod 
+from datetime import datetime
 
-class Transacao(ABC):
-    @property 
-    @abstractmethod
-    def valor(self):
-        pass  
+class Transacao:
+    def __init__(self, valor):
+        self.valor = valor
+        self.data = datetime.now()
 
-    @abstractmethod 
-    def registrar(self, conta):
-        pass 
+    def __str__(self):
+        return f"{self.tipo} de R$ {self.valor:.2f} em {self.data.strftime('%d-%m-%Y %H:%M:%S')}"
